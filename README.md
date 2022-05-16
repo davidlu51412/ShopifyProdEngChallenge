@@ -7,3 +7,5 @@ make sure node is on v16.14.0 or greater, check by doing
 if your node version is not up to date go to: https://nodejs.org/en/download/
 
 `npm i`
+
+nextjs, antd, axios, cors, nodemon, firebase-admin, dot-env,

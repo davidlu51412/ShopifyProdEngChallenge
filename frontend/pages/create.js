@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Form, Input, Button, Select, PageHeader } from "antd";
+import { Form, Input, Button, Select, PageHeader, Space } from "antd";
 import { FEGetAllLocations, FEAddItem } from "./api/api-calls";
 const defaultItem = {
   title: "",
@@ -35,13 +35,13 @@ export default function Create({ locations }) {
   return (
     <>
       <Head>
-        <title>Item Page</title>
+        <title>Create Item</title>
       </Head>
 
       <PageHeader
         ghost={false}
-        title="Edit Item"
-        subTitle="This is page will help you edit items!"
+        title="Create Item"
+        subTitle="This is page will help you creaet items!"
       >
         {itemInfo != null && (
           <>
@@ -66,10 +66,14 @@ export default function Create({ locations }) {
                 </Select>
               </Form.Item>
             </Form>
-            <a href="/">
-              <Button>Cancel</Button>
-            </a>
-            <Button onClick={updateToDatabase}>Done</Button>
+            <Space>
+              <a href="/">
+                <Button>Cancel</Button>
+              </a>
+              <Button type="primary" onClick={updateToDatabase}>
+                Done
+              </Button>
+            </Space>
           </>
         )}
       </PageHeader>

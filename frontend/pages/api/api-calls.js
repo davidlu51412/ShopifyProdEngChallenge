@@ -9,13 +9,16 @@ export async function FEAddItem(data) {
 }
 
 // Create
-export async function FEAddLocation(data) {
+export async function FEAddLocation(address) {
+  const res = await fetch(`http://localhost:8080/api/coords/${address}`);
+  const data = await res.json();
+
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   };
-  await fetch("http://localhost:8080/api/location", requestOptions);
+  await fetch(`http://localhost:8080/api/location/${address}`, requestOptions);
 }
 
 // Read

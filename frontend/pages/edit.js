@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Form, Input, Button, Select, PageHeader } from "antd";
+import { Form, Input, Button, Select, PageHeader, Space } from "antd";
 import { FEGetAllLocations, FEGetItem, FEUpdateItem } from "./api/api-calls";
 
 export async function getStaticProps() {
@@ -37,7 +37,7 @@ export default function Edit({ locations }) {
   return (
     <>
       <Head>
-        <title>Item Page</title>
+        <title>Edit Item</title>
       </Head>
 
       <PageHeader
@@ -75,10 +75,14 @@ export default function Edit({ locations }) {
                 </Select>
               </Form.Item>
             </Form>
-            <a href="/">
-              <Button>Cancel</Button>
-            </a>
-            <Button onClick={updateToDatabase}>Done</Button>
+            <Space>
+              <a href="/">
+                <Button>Cancel</Button>
+              </a>
+              <Button type="primary" onClick={updateToDatabase}>
+                Done
+              </Button>
+            </Space>
           </>
         )}
       </PageHeader>

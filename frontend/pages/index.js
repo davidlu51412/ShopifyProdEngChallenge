@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { PageHeader, Button, Space, Table } from "antd";
+import { PageHeader, Button, Space, Table, Modal } from "antd";
 import {
   FEGetAllItems,
   FEGetAllLocations,
@@ -16,11 +16,11 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { allItems: allItems }, // will be passed to the page component as props
+    props: { allItems: allItems, locations: Object.keys(locationData) }, // will be passed to the page component as props
   };
 }
 
-export default function Home({ allItems }) {
+export default function Home({ allItems, locations }) {
   const [itemDisplay, setItemDisplay] = useState(allItems);
   const columns = [
     {
@@ -76,6 +76,16 @@ export default function Home({ allItems }) {
     },
   ];
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <>
       <Head>
@@ -92,10 +102,25 @@ export default function Home({ allItems }) {
           <a href="/create">
             <Button>Create New Item</Button>
           </a>,
+          <Button type="primary" onClick={showModal}>
+            Show Warehouse Locations
+          </Button>,
+          <a href="/add-location">
+            <Button type="primary">+ Add Warehouse Location</Button>
+          </a>,
         ]}
       >
         <Table dataSource={itemDisplay} columns={columns} />;
       </PageHeader>
+
+      <Modal
+        title="Warehouse Locations"
+        visible={isModalVisible}
+        footer={null}
+        onCancel={handleCancel}
+      >
+        {locations && locations.map((loc) => <p>{loc}</p>)}
+      </Modal>
     </>
   );
 }

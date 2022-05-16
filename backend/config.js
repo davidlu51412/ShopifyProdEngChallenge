@@ -11,6 +11,7 @@ const {
   HOST_URL,
   WEATHER_API_KEY,
   GOOGLE_APPLICATION_CREDENTIALS,
+  GEOLOCATION_API_KEY,
 } = process.env;
 
 const serviceAccount = require(GOOGLE_APPLICATION_CREDENTIALS);
@@ -29,4 +30,5 @@ module.exports = {
   host: HOST,
   url: HOST_URL,
   weatherAPI: WEATHER_API_KEY,
+  geolocationAPI: GEOLOCATION_API_KEY,
 };

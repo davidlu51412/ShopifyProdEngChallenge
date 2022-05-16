@@ -1,16 +1,29 @@
 "use strict";
 
 const Location = require("../models/location");
-const { db, weatherAPI } = require("../config");
+const { db, weatherAPI, geolocationAPI } = require("../config");
 const axios = require("axios");
-const https = require("https");
 
 const addLocation = async (req, res, next) => {
   try {
     const data = req.body;
-    const location = req.params.location;
-    await db.collection("Locations").doc(location).set(data);
+    const address = req.params.address;
+    await db.collection("Locations").doc(address).set(data);
     res.send("Record saved successfuly");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
+const getLocationCoords = async (req, res, next) => {
+  try {
+    const geoLocation = await axios.get(
+      `http://api.positionstack.com/v1/forward?access_key=${geolocationAPI}&query=${req.params.address}`
+    );
+    res.send({
+      lat: geoLocation.data.data[0].latitude.toString(),
+      lon: geoLocation.data.data[0].longitude.toString(),
+    });
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -66,4 +79,5 @@ module.exports = {
   addLocation,
   getAllLocations,
   getLocationWeather,
+  getLocationCoords,
 };
