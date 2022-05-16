@@ -7,11 +7,26 @@ clone repo or use replit
 
 clone it in a location of your choice
 `git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
+
 or use the replit project(replit is very slow compared to the localhosting): https://replit.com/join/kzzkqvjleh-dl25
+
+Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
+you can do queries such as:
+
+Lists All items:
+*https://shopifyprodengchallenge.dl25.repl.co/api/items
+
+Lists All locations:
+*https://shopifyprodengchallenge.dl25.repl.co/api/locations
+
+Lists a Specific Item
+*https://shopifyprodengchallenge.dl25.repl.co/api/item/oQb9XJ8zkt1h9RK6ovdX
+
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
-**_BACKEND_**
+*BACKEND*
+
 For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
 make sure you are in the backend folder
@@ -30,7 +45,8 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 now install the backend dependencies
 `npm i`
 
-**_FRONTEND_**
+*FRONTEND*
+
 ok now lets open another terminal from the root (./SHOPIFYPRODENGCHALLENGE)
 
 make sure your next js version is v12.1.6 or higher
