@@ -1,16 +1,16 @@
 # ShopifyProdEngChallenge
 
-Here is a demo of the application on youtube:
+
+# Demo
+Here is a demo of the application on youtube (just in case replit goes down or anything goes wrong)
 https://youtu.be/V8PM_zKOCs0
 
-clone repo or use replit
-
-clone it in a location of your choice
-`git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
-
-
 # Replit
+### Frontend 
+Here is the deployed frontend of the replit project: https://shopifyprodengchallenge-1.dl25.repl.co/
+* you should only need to utilize this website, however, i've included the backend so u can see the actual query data returned from read methods
 
+### Backend
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
 you can do queries such as:
 
@@ -26,9 +26,17 @@ Lists a Specific Item
 Note: More Queries can be seen in the frontend/pages/api as examples
 
 
+# Tutorial
+
+clone repo or use replit
+
+clone it in a location of your choice
+`git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
+
+
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
-#BACKEND
+# BACKEND
 
 For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
@@ -48,7 +56,7 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 now install the backend dependencies
 `npm i`
 
-#FRONTEND
+# FRONTEND
 
 ok now lets open another terminal from the root (./SHOPIFYPRODENGCHALLENGE)
 
