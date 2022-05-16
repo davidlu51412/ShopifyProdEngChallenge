@@ -11,7 +11,7 @@ or use the replit project(replit is very slow compared to the localhosting): htt
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
-BACKEND:
+**_BACKEND_**
 For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
 make sure you are in the backend folder
@@ -30,7 +30,7 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 now install the backend dependencies
 `npm i`
 
-FRONTEND:
+**_FRONTEND_**
 ok now lets open another terminal from the root (./SHOPIFYPRODENGCHALLENGE)
 
 make sure your next js version is v12.1.6 or higher
