@@ -14,13 +14,15 @@ Here is the deployed backend of the replit project: https://shopifyprodengchalle
 you can do queries such as:
 
 Lists All items:
-*https://shopifyprodengchallenge.dl25.repl.co/api/items
+* https://shopifyprodengchallenge.dl25.repl.co/api/items
 
 Lists All locations:
-*https://shopifyprodengchallenge.dl25.repl.co/api/locations
+* https://shopifyprodengchallenge.dl25.repl.co/api/locations
 
 Lists a Specific Item
-*https://shopifyprodengchallenge.dl25.repl.co/api/item/oQb9XJ8zkt1h9RK6ovdX
+* https://shopifyprodengchallenge.dl25.repl.co/api/item/oQb9XJ8zkt1h9RK6ovdX
+
+Note: More Queries can be seen in the frontend/pages/api as examples
 
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
