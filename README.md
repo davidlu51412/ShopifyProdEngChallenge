@@ -8,4 +8,6 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 
 `npm i`
 
-nextjs, antd, axios, cors, nodemon, firebase-admin, dot-env,
+Technologies Used:
+
+nextjs, antd, axios, cors, nodemon, firebase-admin, dot-env, openweathermap Weather API, positionstack.com Geolocation API
