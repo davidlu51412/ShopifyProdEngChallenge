@@ -3,14 +3,16 @@
 Here is a demo of the application on youtube:
 https://youtu.be/V8PM_zKOCs0
 
-clone repo
+clone repo or use replit
 
 clone it in a location of your choice
 `git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
+or use the replit project(replit is very slow compared to the localhosting): https://replit.com/join/kzzkqvjleh-dl25
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
 BACKEND:
+For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
 make sure you are in the backend folder
 `cd backend`
