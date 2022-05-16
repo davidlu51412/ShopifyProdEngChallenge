@@ -1,5 +1,8 @@
 # ShopifyProdEngChallenge
 
+Here is a demo of the application on youtube:
+https://youtu.be/V8PM_zKOCs0
+
 clone repo
 
 clone it in a location of your choice
