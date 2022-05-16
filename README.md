@@ -26,7 +26,7 @@ Lists a Specific Item
 Note: More Queries can be seen in the frontend/pages/api as examples
 
 
-# Tutorial
+# LOCALHOST Tutorial
 
 clone repo or use replit
 
