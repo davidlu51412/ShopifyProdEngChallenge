@@ -8,7 +8,8 @@ clone repo or use replit
 clone it in a location of your choice
 `git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
 
-or use the replit project(replit is very slow compared to the localhosting): https://replit.com/join/kzzkqvjleh-dl25
+
+# Replit
 
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
 you can do queries such as:
