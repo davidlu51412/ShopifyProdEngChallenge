@@ -1,78 +1,81 @@
 import Head from "next/head";
-import { useState } from "react";
 import { PageHeader, Button, Space, Table } from "antd";
-import { useCollection } from "react-firebase-hooks/firestore";
-
+import {
+  FEGetAllItems,
+  FEGetAllLocations,
+  FEDeleteItem,
+} from "./api/api-calls";
+import { useState } from "react";
 export async function getStaticProps() {
-  const cityRes = await fetch("http://localhost:3001/cities");
-  const cityData = await cityRes.json();
-  const weatherRes = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?lat={40}&lon={40}&appid={9a3d21f206257e662f7dfa6c83318936}"
-  );
-  const weatherData = await weatherRes.json();
+  const allItems = await FEGetAllItems();
+
+  const locationData = await FEGetAllLocations();
+
+  allItems.forEach((item) => {
+    item["weather"] = locationData[item.location].weather;
+  });
 
   return {
-    props: { cities: cityData }, // will be passed to the page component as props
+    props: { allItems: allItems }, // will be passed to the page component as props
   };
 }
 
-const dataSource = [
-  {
-    key: "1",
-    title: "Item Title",
-    itemID: "XFA3D",
-    description: "this is the description",
-    location: "New York City, NY",
-    weather: "weather desc",
-  },
-];
-
-const columns = [
-  {
-    title: "Title",
-    dataIndex: "title",
-    key: "title",
-  },
-  {
-    title: "Item ID",
-    dataIndex: "itemID",
-    key: "itemID",
-  },
-  {
-    title: "Description",
-    dataIndex: "description",
-    key: "description",
-  },
-  {
-    title: "Location",
-    dataIndex: "location",
-    key: "location",
-  },
-
-  {
-    title: "Weather",
-    dataIndex: "weather",
-    key: "weather",
-  },
-
-  {
-    title: "Actions",
-    dataIndex: "actions",
-    key: "actions",
-    render: (x, record, i) => {
-      console.log(record);
-
-      return (
-        <Space size="middle">
-          <a href={`/edit?itemID=${record.itemID}`}>Edit</a>
-          <Button danger>Delete </Button>
-        </Space>
-      );
+export default function Home({ allItems }) {
+  const [itemDisplay, setItemDisplay] = useState(allItems);
+  const columns = [
+    {
+      title: "Title",
+      dataIndex: "title",
+      key: "title",
     },
-  },
-];
+    {
+      title: "Item ID",
+      dataIndex: "itemID",
+      key: "itemID",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+    },
+    {
+      title: "Location",
+      dataIndex: "location",
+      key: "location",
+    },
 
-export default function Home({ cities }) {
+    {
+      title: "Weather",
+      dataIndex: "weather",
+      key: "weather",
+    },
+
+    {
+      title: "Actions",
+      dataIndex: "actions",
+      key: "actions",
+      render: (x, record, i) => {
+        return (
+          <Space size="middle">
+            <a href={`/edit?itemID=${record.itemID}`}>Edit</a>
+            <Button
+              danger
+              onClick={() =>
+                FEDeleteItem(record.itemID).then(() => {
+                  const newItemDisplay = [...itemDisplay];
+                  newItemDisplay.splice(i, 1);
+                  setItemDisplay(newItemDisplay);
+                })
+              }
+            >
+              Delete{" "}
+            </Button>
+          </Space>
+        );
+      },
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -91,7 +94,7 @@ export default function Home({ cities }) {
           </a>,
         ]}
       >
-        <Table dataSource={dataSource} columns={columns} />;
+        <Table dataSource={itemDisplay} columns={columns} />;
       </PageHeader>
     </>
   );

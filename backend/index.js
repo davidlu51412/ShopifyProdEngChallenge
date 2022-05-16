@@ -1,33 +1,20 @@
+"use-strict";
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
+const cors = require("cors");
+const bodyParse = require("body-parser");
+const config = require("./config");
+const bodyParser = require("body-parser");
+const itemRoutes = require("./routes/item-routes");
+const locationRoutes = require("./routes/location-routes");
 
 const app = express();
-const cities = [
-  { label: "New York City, NY", lat: 40, lon: 74 },
-  { label: "Los Angeles, CA", lat: 34, lon: 118 },
-  { label: "Chicago, IL", lat: 42, lon: 88 },
-  { label: "Houston, TX", lat: 30, lon: 95 },
-  { label: "Phoenix, AZ", lat: 33, lon: 112 },
-];
 
-// gets all the cities and available locations
-app.get("/cities", (req, res) => {
-  res.json(cities);
-});
+app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
+app.use("/api", itemRoutes.routes);
+app.use("/api", locationRoutes.routes);
 
-// returns the info of the item
-app.get("/item", (req, res) => {
-  const { itemID } = req.query;
-  res.json(itemID + " is the item");
-});
-
-// returns the weather of a location
-app.get("/weather", (req, res) => {
-  const { lat, lon } = req.query;
-  res.json(lat + lon + " is the location");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+app.listen(config.port, () => {
+  console.log(`Server listening on ${config.port}`);
 });

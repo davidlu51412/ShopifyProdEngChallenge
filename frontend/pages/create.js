@@ -1,24 +1,23 @@
+import { useRouter } from "next/router";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Input, Button, Select, PageHeader } from "antd";
+import { FEGetAllLocations, FEAddItem } from "./api/api-calls";
 const defaultItem = {
   title: "",
   description: "",
   location: "",
 };
 export async function getStaticProps() {
-  const cityRes = await fetch("http://localhost:3001/cities");
-  const cityData = await cityRes.json();
-  const weatherRes = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?lat={40}&lon={40}&appid={9a3d21f206257e662f7dfa6c83318936}"
-  );
-  const weatherData = await weatherRes.json();
-
+  const locationData = await FEGetAllLocations();
+  const locations = Object.keys(locationData);
   return {
-    props: { cities: cityData }, // will be passed to the page component as props
+    props: { locations: locations }, // will be passed to the page component as props
   };
 }
-export default function ImportantID({ cities }) {
+export default function Create({ locations }) {
+  const router = useRouter();
+  const { itemID } = router.query;
   const [itemInfo, setItemInfo] = useState(defaultItem);
 
   const changeItem = (key, value) => {
@@ -28,8 +27,9 @@ export default function ImportantID({ cities }) {
   };
 
   async function updateToDatabase() {
-    console.log(itemInfo);
-    window.location.href = "/";
+    FEAddItem({ ...itemInfo }).then(() => {
+      window.location.href = "/";
+    });
   }
 
   return (
@@ -40,8 +40,8 @@ export default function ImportantID({ cities }) {
 
       <PageHeader
         ghost={false}
-        title="Create Item"
-        subTitle="This is page will help you create an item!"
+        title="Edit Item"
+        subTitle="This is page will help you edit items!"
       >
         {itemInfo != null && (
           <>
@@ -51,24 +51,17 @@ export default function ImportantID({ cities }) {
               layout="horizontal"
             >
               <Form.Item label="Item Title">
-                <Input
-                  defaultValue={itemInfo.title}
-                  onChange={(e) => changeItem("title", e.target.value)}
-                />
+                <Input onChange={(e) => changeItem("title", e.target.value)} />
               </Form.Item>
               <Form.Item label="Item Description">
                 <Input
-                  defaultValue={itemInfo.description}
                   onChange={(e) => changeItem("description", e.target.value)}
                 />
               </Form.Item>
               <Form.Item label="Item Location">
-                <Select
-                  defaultValue={itemInfo.location}
-                  onChange={(e) => changeItem("location", e)}
-                >
-                  {cities.map((val) => (
-                    <Select.Option value={val.label}>{val.label}</Select.Option>
+                <Select onChange={(e) => changeItem("location", e)}>
+                  {locations.map((val) => (
+                    <Select.Option value={val}>{val}</Select.Option>
                   ))}
                 </Select>
               </Form.Item>
@@ -76,7 +69,7 @@ export default function ImportantID({ cities }) {
             <a href="/">
               <Button>Cancel</Button>
             </a>
-            <Button onClick={updateToDatabase}>Create</Button>
+            <Button onClick={updateToDatabase}>Done</Button>
           </>
         )}
       </PageHeader>
