@@ -27,7 +27,7 @@ Note: More Queries can be seen in the frontend/pages/api as examples
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
-*BACKEND*
+#BACKEND
 
 For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
@@ -47,7 +47,7 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 now install the backend dependencies
 `npm i`
 
-*FRONTEND*
+#FRONTEND
 
 ok now lets open another terminal from the root (./SHOPIFYPRODENGCHALLENGE)
 
