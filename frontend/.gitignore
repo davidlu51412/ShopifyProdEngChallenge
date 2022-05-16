@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 
 # keys
-shopifyproductengineer-firebase-adminsdk-l9jjl-e0050697db.json
+/backend/shopifyproductengineer-firebase-adminsdk-l9jjl-e0050697db.json
