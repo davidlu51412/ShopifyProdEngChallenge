@@ -15,10 +15,6 @@ Here is the deployed frontend of the replit project: https://shopifyprodengchall
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
 you can do queries such as:
 
-### If it takes too long to load
-* go to this link https://replit.com/join/kzzkqvjleh-dl25 and then click run
-* then go to this link https://replit.com/join/ruxbnonqme-dl25 and then click run
-
 Lists All items:
 * https://shopifyprodengchallenge.dl25.repl.co/api/items
 
@@ -29,6 +25,10 @@ Lists a Specific Item
 * https://shopifyprodengchallenge.dl25.repl.co/api/item/oQb9XJ8zkt1h9RK6ovdX
 
 Note: More Queries can be seen in the frontend/pages/api as examples
+
+### If it takes too long to load
+* go to this link https://replit.com/join/kzzkqvjleh-dl25 and then click run
+* then go to this link https://replit.com/join/ruxbnonqme-dl25 and then click run
 
 
 # LOCALHOST Tutorial
