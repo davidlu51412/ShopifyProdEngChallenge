@@ -5,7 +5,9 @@
 Here is a demo of the application on youtube (just in case replit goes down or anything goes wrong)
 https://youtu.be/V8PM_zKOCs0
 
-# Replit Setup
+# Replit Setup 
+
+The setup of "waking up" the backend and frontend should take no longer than 5 min.
 
 ### 1. Backend
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
@@ -25,9 +27,10 @@ Lists a Specific Item
 
 ### 2. Frontend 
 Here is the deployed frontend of the replit project: https://shopifyprodengchallenge-1.dl25.repl.co/
-* you should only need to utilize this website, however, i've included the backend so u can see the actual query data returned from read methods
-* Note that it if the replit has not been accessed recently it takes some time for the Replit hosting to "wake up" so that you are able to access it and it will show a loading screen before the application is redeployed
+Please click this link after the backend replit has loaded.
 
+* this is the main bulk of the app, however, i've also included the backend so u can see the actual query data returned from read methods
+* Note that it if the replit has not been accessed recently it takes some time for the Replit hosting to "wake up" so that you are able to access it and it will show a loading screen before the application is redeployed
 
 
 Note: More Queries can be seen in the frontend/pages/api as examples
