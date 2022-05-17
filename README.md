@@ -5,14 +5,12 @@
 Here is a demo of the application on youtube (just in case replit goes down or anything goes wrong)
 https://youtu.be/V8PM_zKOCs0
 
-# Replit
-### Frontend 
-Here is the deployed frontend of the replit project: https://shopifyprodengchallenge-1.dl25.repl.co/
-* you should only need to utilize this website, however, i've included the backend so u can see the actual query data returned from read methods
-* Note that it if the replit has not been accessed recently it takes some time for the Replit hosting to "wake up" so that you are able to access it and it will show a loading screen before the application is redeployed
+# Replit Setup
 
-### Backend
+### 1. Backend
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
+Make sure you click the backend link first since replit requires the site to "wake up". Once the website loads (it will show 'Cannot GET /') then click the frontend link
+
 you can do queries such as:
 
 Lists All items:
@@ -24,16 +22,25 @@ Lists All locations:
 Lists a Specific Item
 * https://shopifyprodengchallenge.dl25.repl.co/api/item/oQb9XJ8zkt1h9RK6ovdX
 
+
+### 2. Frontend 
+Here is the deployed frontend of the replit project: https://shopifyprodengchallenge-1.dl25.repl.co/
+* you should only need to utilize this website, however, i've included the backend so u can see the actual query data returned from read methods
+* Note that it if the replit has not been accessed recently it takes some time for the Replit hosting to "wake up" so that you are able to access it and it will show a loading screen before the application is redeployed
+
+
+
 Note: More Queries can be seen in the frontend/pages/api as examples
 
-### If it takes too long to load
+### NOTE: If it takes too long to load
 * go to this link https://replit.com/join/kzzkqvjleh-dl25 and then click run
 * then go to this link https://replit.com/join/ruxbnonqme-dl25 and then click run
 
 
 # LOCALHOST Tutorial
 
-clone repo or use replit
+
+### 1. Clone Repo
 
 clone it in a location of your choice
 `git clone https://github.com/davidlu51412/ShopifyProdEngChallenge.git`
@@ -41,7 +48,7 @@ clone it in a location of your choice
 
 Open a terminal and make sure its at the root (./SHOPIFYPRODENGCHALLENGE)
 
-# BACKEND
+### 2. BACKEND
 
 For the endpoints/routes, the backend directory contains the index.js file to see the corresponding routes and also the files in the routes subdirectory which contain the specific functions and routes to each inventory item or location
 
@@ -61,7 +68,7 @@ if your node version is not up to date go to: https://nodejs.org/en/download/
 now install the backend dependencies
 `npm i`
 
-# FRONTEND
+### 3. FRONTEND
 
 ok now lets open another terminal from the root (./SHOPIFYPRODENGCHALLENGE)
 
@@ -86,6 +93,6 @@ in your "frontend" terminal do:
 
 Now you are ready to go!
 
-Technologies Used:
+# Technologies Used:
 
 nextjs, antd, axios, cors, nodemon, firebase-admin, dot-env, openweathermap Weather API, positionstack.com Geolocation API
