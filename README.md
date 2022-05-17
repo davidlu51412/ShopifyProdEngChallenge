@@ -9,6 +9,7 @@ https://youtu.be/V8PM_zKOCs0
 ### Frontend 
 Here is the deployed frontend of the replit project: https://shopifyprodengchallenge-1.dl25.repl.co/
 * you should only need to utilize this website, however, i've included the backend so u can see the actual query data returned from read methods
+* Note that it if the replit has not been accessed recently it takes some time for the Replit hosting to "wake up" so that you are able to access it and it will show a loading screen before the application is redeployed
 
 ### Backend
 Here is the deployed backend of the replit project: https://shopifyprodengchallenge.dl25.repl.co/
